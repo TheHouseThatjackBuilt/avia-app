@@ -1,0 +1,47 @@
+.buttons {
+  display: grid;
+  min-height: 50px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.button {
+  background: $backgroundColorContent;
+  border: 1px solid $borderColor;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  color: $fontColor;
+
+  &::after {
+    display: block;
+    position: absolute;
+    margin: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: '.';
+    color: transparent;
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    background: transparent;
+    transition: all 0.3s;
+  }
+  &:hover::after {
+    animation: circle 0.5s ease-in forwards;
+    color: $hoverButtons;
+  }
+
+  &:hover {
+    color: $hoverButtons;
+  }
+}

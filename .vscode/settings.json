@@ -1,0 +1,5 @@
+{
+    "typescript.tsdk": "node_modules\\typescript\\lib",
+    "ecsstractor_port.attributes": "className",
+    "ecsstractor_port.bem_nesting": true
+}

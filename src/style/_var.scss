@@ -1,0 +1,51 @@
+// * colors ---------- * //
+
+$backgroundColorHTML: #e5e5e5;
+$backgroundColorBody: #f3f7fa;
+$backgroundColorContent: #ffffff;
+$animation0forFilter: #f1fcf0;
+$animation100forFilter: #f1fcff;
+$hoverButtons: #2196f3;
+$fontColor: #4a4a4a;
+$fontColorHeader: #a0b0b9;
+$borderColor: #dfe5ec;
+$buttonColorHover: #2196f3;
+
+// * shadows -----------* //
+
+$shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+
+// * extends ---------* //
+
+// * animation ---------* //
+
+@keyframes circle {
+  0% {
+    width: 1px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    height: 1px;
+    z-index: -1;
+    border-radius: 100%;
+    color: white;
+
+    background: $animation0forFilter;
+  }
+  100% {
+    height: 5000%;
+    width: 5000%;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 0;
+    color: white;
+
+    background: $animation100forFilter;
+  }
+}
