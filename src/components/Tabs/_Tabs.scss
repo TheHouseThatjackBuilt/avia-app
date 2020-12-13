@@ -20,28 +20,62 @@
 
   color: $fontColor;
 
-  &::after {
-    display: block;
-    position: absolute;
-    margin: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    content: '.';
-    color: transparent;
-    width: 1px;
-    height: 1px;
-    border-radius: 50%;
-    background: transparent;
-    transition: all 0.3s;
+  &__cheap {
+    &::after {
+      display: block;
+      position: absolute;
+      margin: 0;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      content: '.';
+      color: transparent;
+      width: 1px;
+      height: 1px;
+      border-radius: 50%;
+      background: transparent;
+      transition: all 0.3s;
+    }
+    &:hover::after {
+      animation: circle 0.5s ease-in forwards;
+      color: $hoverButtons;
+    }
+
+    &:hover {
+      color: $hoverButtons;
+    }
   }
-  &:hover::after {
-    animation: circle 0.5s ease-in forwards;
-    color: $hoverButtons;
+  &__fast {
+    &::after {
+      display: block;
+      position: absolute;
+      margin: 0;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      content: '.';
+      color: transparent;
+      width: 1px;
+      height: 1px;
+      border-radius: 50%;
+      background: transparent;
+      transition: all 0.3s;
+    }
+    &:hover::after {
+      animation: circle 0.5s ease-in forwards;
+      color: $hoverButtons;
+    }
+
+    &:hover {
+      color: $hoverButtons;
+    }
   }
 
-  &:hover {
-    color: $hoverButtons;
+  &__active {
+    transition: all 0.5s;
+    background-color: $buttonActive;
+    color: white;
   }
 }

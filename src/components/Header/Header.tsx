@@ -1,11 +1,8 @@
 import React from 'react';
-import Logo from './logo';
 
 const Header: React.FC = () => (
   <header className="main__header header">
-    <div className="header__logo">
-      <Logo />
-    </div>
+    <div className="header__logo" />
   </header>
 );
 

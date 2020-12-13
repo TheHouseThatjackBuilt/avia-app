@@ -1,9 +1,9 @@
 /* eslint-disable */
 import React from 'react';
-import allFilterChecked from '../../tools/index';
 
-const Filter = ({ filterStatus, filterAll, filterNone, filter1, filter2, filter3 }) => {
-  const CheckAll = allFilterChecked(filterStatus);
+const Filter = ({ CheckAll, filterStatus, filterAll, filterNone, filter1, filter2, filter3 }) => {
+  const { filterStatusNone, filterStatusOne, filterStatusTwo, filterStatusThree } = filterStatus;
+
   return (
     <div className="content__filters-container filter">
       <h3 className="filter__title">количество пересадок</h3>
@@ -26,7 +26,7 @@ const Filter = ({ filterStatus, filterAll, filterNone, filter1, filter2, filter3
               onChange={({ target: { checked } }) => filterNone(checked)}
               className="filter__input"
               type="checkbox"
-              checked={filterStatus.filterStatusNone}
+              checked={filterStatusNone}
             />
             <span className="filter__checkbox" />
             Без пересадок
@@ -38,7 +38,7 @@ const Filter = ({ filterStatus, filterAll, filterNone, filter1, filter2, filter3
               onChange={({ target: { checked } }) => filter1(checked)}
               className="filter__input"
               type="checkbox"
-              checked={filterStatus.filterStatusOne}
+              checked={filterStatusOne}
             />
             <span className="filter__checkbox" />1 пересадка
           </label>
@@ -49,7 +49,7 @@ const Filter = ({ filterStatus, filterAll, filterNone, filter1, filter2, filter3
               onChange={({ target: { checked } }) => filter2(checked)}
               className="filter__input"
               type="checkbox"
-              checked={filterStatus.filterStatusTwo}
+              checked={filterStatusTwo}
             />
             <span className="filter__checkbox" />2 пересадки
           </label>
@@ -60,7 +60,7 @@ const Filter = ({ filterStatus, filterAll, filterNone, filter1, filter2, filter3
               onChange={({ target: { checked } }) => filter3(checked)}
               className="filter__input"
               type="checkbox"
-              checked={filterStatus.filterStatusThree}
+              checked={filterStatusThree}
             />
             <span className="filter__checkbox" />3 пересадки
           </label>

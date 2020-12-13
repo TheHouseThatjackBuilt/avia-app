@@ -1,6 +1,8 @@
 @import './var';
+@import 'antd/dist/antd.css';
 @import '../pages/App/App';
-@import '../components/Main/Main';
+@import '../components/Header/Header';
+@import '../containers/Main/Main';
 @import '../components/Filter/Filter';
 @import '../components/Tabs/Tabs';
 @import '../components/Tickets/Tickets';

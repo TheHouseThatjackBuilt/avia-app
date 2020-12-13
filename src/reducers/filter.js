@@ -8,8 +8,7 @@ import {
 } from '../tools/constants';
 
 const initialState = {
-  filterStatusAll: false,
-  filterStatusNone: false,
+  filterStatusNone: true,
   filterStatusOne: false,
   filterStatusTwo: false,
   filterStatusThree: false,
