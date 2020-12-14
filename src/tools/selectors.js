@@ -26,31 +26,19 @@ export const filterData = createSelector(getTickets, getFilter, (data, filters) 
   if (filterStatusOne)
     sortedTickets = [
       ...sortedTickets,
-      ...data.filter(
-        ({ segments }) =>
-          (segments[0].stops.length === 1 && segments[1].stops.length === 1) ||
-          (segments[1].stops.length === 1 && segments[0].stops.length === 1)
-      ),
+      ...data.filter(({ segments }) => segments[0].stops.length === 1 && segments[1].stops.length === 1),
     ];
 
   if (filterStatusTwo)
     sortedTickets = [
       ...sortedTickets,
-      ...data.filter(
-        ({ segments }) =>
-          (segments[0].stops.length === 2 && segments[1].stops.length === 2) ||
-          (segments[1].stops.length === 2 && segments[0].stops.length === 2)
-      ),
+      ...data.filter(({ segments }) => segments[0].stops.length === 2 && segments[1].stops.length === 2),
     ];
 
   if (filterStatusThree)
     sortedTickets = [
       ...sortedTickets,
-      ...data.filter(
-        ({ segments }) =>
-          (segments[0].stops.length === 3 && segments[1].stops.length === 3) ||
-          (segments[1].stops.length === 3 && segments[0].stops.length === 3)
-      ),
+      ...data.filter(({ segments }) => segments[0].stops.length === 3 && segments[1].stops.length === 3),
     ];
 
   return sortedTickets;

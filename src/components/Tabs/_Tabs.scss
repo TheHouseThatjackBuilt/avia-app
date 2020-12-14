@@ -1,4 +1,6 @@
 .buttons {
+  position: sticky;
+  top: 25px;
   display: grid;
   min-height: 50px;
   grid-template-columns: 1fr 1fr;
