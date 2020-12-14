@@ -17,29 +17,33 @@ export const filterData = createSelector(getTickets, getFilter, (data, filters) 
   const { filterStatusNone, filterStatusOne, filterStatusTwo, filterStatusThree } = filters;
   let sortedTickets = [];
 
-  if (filterStatusNone)
+  if (filterStatusNone) {
     sortedTickets = [
       ...sortedTickets,
-      ...data.filter(({ segments }) => (segments[0].stops.length === 0) & (segments[1].stops.length === 0)),
+      ...data.filter(({ segments }) => segments[0].stops.length === 0 && segments[1].stops.length === 0),
     ];
+  }
 
-  if (filterStatusOne)
+  if (filterStatusOne) {
     sortedTickets = [
       ...sortedTickets,
       ...data.filter(({ segments }) => segments[0].stops.length === 1 && segments[1].stops.length === 1),
     ];
+  }
 
-  if (filterStatusTwo)
+  if (filterStatusTwo) {
     sortedTickets = [
       ...sortedTickets,
       ...data.filter(({ segments }) => segments[0].stops.length === 2 && segments[1].stops.length === 2),
     ];
+  }
 
-  if (filterStatusThree)
+  if (filterStatusThree) {
     sortedTickets = [
       ...sortedTickets,
       ...data.filter(({ segments }) => segments[0].stops.length === 3 && segments[1].stops.length === 3),
     ];
+  }
 
   return sortedTickets;
 });
