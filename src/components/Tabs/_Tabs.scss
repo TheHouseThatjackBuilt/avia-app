@@ -4,6 +4,10 @@
   display: grid;
   min-height: 50px;
   grid-template-columns: 1fr 1fr;
+
+  @media (max-width: 680px) {
+    position: static;
+  }
 }
 
 .button {

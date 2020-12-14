@@ -103,6 +103,7 @@
   }
 
   @media (max-width: 680px) {
+    position: static;
     height: 150px;
     grid-template: 32px 1fr / 1fr;
   }
