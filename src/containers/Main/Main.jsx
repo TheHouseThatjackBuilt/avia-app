@@ -48,19 +48,6 @@ const Main = ({
   const persentLoading = Math.floor((tickets.length * 100) / 7000);
   const noFilterAlert = Object.values(filter).filter((el) => el === true).length;
 
-  const progressBar = !stop ? (
-    <Progress percent={persentLoading} strokeColor="#2196f3" showInfo={false} status="active" />
-  ) : null;
-
-  const alert = !noFilterAlert ? (
-    <Alert
-      message="Informational Notes"
-      description="Билетов, подходящих под параметры поиска не найдено"
-      type="info"
-      showIcon
-    />
-  ) : null;
-
   return (
     <main className="main__content content">
       <Filter
@@ -74,8 +61,15 @@ const Main = ({
       />
       <section className="content__tickets">
         <Tabs tabsStatus={tabsStatus} sortByPrice={sortByPrice} sortBySpeed={sortBySpeed} />
-        {progressBar}
-        {alert}
+        {!stop ? <Progress percent={persentLoading} strokeColor="#2196f3" showInfo={false} status="active" /> : null}
+        {!noFilterAlert ? (
+          <Alert
+            message="Informational Notes"
+            description="Билетов, подходящих под параметры поиска не найдено"
+            type="info"
+            showIcon
+          />
+        ) : null}
         <TicketsList tickets={sortedTickets} />
       </section>
     </main>
