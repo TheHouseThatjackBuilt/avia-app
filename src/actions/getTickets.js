@@ -6,8 +6,9 @@ const getSearchId = () => async (dispatch) => {
   dispatch({ type: GET_SESSION_ID, payload: response });
 };
 
-const getTickets = (id) => (dispatch) => requestTickets(id)
-  .then((data) => dispatch({ type: GET_TICKETS, payload: data }))
-  .catch(() => dispatch({ type: GET_TICKETS, payload: { tickets: [], stop: false } }));
+const getTickets = (id) => async (dispatch) => {
+  const response = await requestTickets(id);
+  dispatch({ type: GET_TICKETS, payload: response });
+};
 
 export { getSearchId, getTickets };

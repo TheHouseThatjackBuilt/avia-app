@@ -3,7 +3,7 @@ import { BASE_PATH, SEARCH_ID, SEARCH_PARAMS } from '../tools/constants';
 
 const request = async (params) => {
   let response = await fetch(`${BASE_PATH}${params}`);
-  if (!response.ok) throw new Error();
+  if (response.status === 500) return request(params);
   return response.json();
 };
 
