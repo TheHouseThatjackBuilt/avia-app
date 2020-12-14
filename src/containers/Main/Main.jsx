@@ -43,7 +43,7 @@ const Main = ({
   useEffect(() => {
     if (sessionId === '') getSearchId();
     if (!stop && sessionId !== '') getTickets(sessionId);
-  }, [sessionId, stop, getSearchId, getTickets, tickets]);
+  }, [sessionId, stop, tickets]);
 
   const persentLoading = Math.floor((tickets.length * 100) / 7000);
   const noFilterAlert = Object.values(filter).filter((el) => el === true).length;
