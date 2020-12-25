@@ -17,7 +17,7 @@ const initialState = {
 const filter = (state = initialState, { type, payload }) => {
   switch (type) {
     case FILTER_TRANSFER_ALL:
-      return Object.entries(initialState).reduce((acc, [key, _]) => ({ ...acc, [key]: payload }), {});
+      return Object.entries(state).reduce((acc, [key, _]) => ({ ...acc, [key]: payload }), {});
     case FILTER_TRANSFER_NONE:
       return { ...state, filterStatusNone: payload };
     case FILTER_TRANSFER_1:
